@@ -1,23 +1,5 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Sep 13 13:41:46 2022
-
 @author: J.Kraemer
-"""
 
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Apr 29 13:38:30 2022
-
-@author: J.Kraemer
-"""
-
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Apr 28 09:10:19 2022
-
-@author: J.Kraemer
-"""
 
 import geopandas as gpd
 import glob
@@ -28,8 +10,8 @@ from shapely.ops import cascaded_union
 import openpyxl
 
 # strassennamen
-strassenname = '2_008_Ostfildern_Poltawaweg'
-clusterklein = '2_008'
+strassenname = '1_001_Karlsruhe_Tennesey'
+clusterklein = '1_001'
 
 # open the csv file were data is stored 
 csv = pd.read_csv('V:/_Projekte/22-037_Bundesanstalt_Bundesimmobilien_Sued_Aussenanlagen/01_Vorgaben/Python_Vorlagen/BW_tabelle_nur_flur.csv', sep = ';')
@@ -102,7 +84,9 @@ for i in range(len(csv)):
         a = csv.columns.get_loc(liste_layer[x])
         csv.iloc[[flur_index],a] = liste_area[x]
     
-    csv['IR_Gebaeude'][i] = clip_haus.area
+    #csv['IR_Gebaeude'][i] = clip_haus.area
+    ac = csv[csv['Flurstnr'] == flurnr].index
+    csv['IR_Gebaeude'][ac[0]] = clip_haus.area
     print(sum(clip.area)-sum(subs.area))
     print(i) 
     
@@ -138,14 +122,5 @@ merged.to_excel(file_name)
 
 
 
-
 #xyz
-
-
-
-
-
-
-
-
 
