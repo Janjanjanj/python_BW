@@ -1,0 +1,40 @@
+QGIS Anleitung für 22-037 Bundesimmobilien
+
+1.1 Handy/Drohnenfotos einladen 
+import Geotagged Photos 
+
+
+
+
+
+
+
+
+ Dieses Feld muss oben an sein 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[% filename %]
+<br>
+<a href="file:///[% photo %]" target="new">
+<img src="file:///[% photo %]" width=200>
+</a> 
+
+
+- dann mit der Maus lange draufbleiben und das Foto öffnet sich
